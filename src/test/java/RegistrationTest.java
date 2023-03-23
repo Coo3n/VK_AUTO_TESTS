@@ -29,8 +29,8 @@ public class RegistrationTest {
         WebElement buttonChangeLanguage = registrationOkPage.getButtonChangeLanguage();
         buttonChangeLanguage.click();
 
-        WebElement fieldUzbekLanguage = registrationOkPage.getFieldEnglishLanguage();
-        String newPageURL = fieldUzbekLanguage.getAttribute("href");
+        WebElement fieldEnglishLanguage = registrationOkPage.getFieldEnglishLanguage();
+        String newPageURL = fieldEnglishLanguage.getAttribute("href");
 
         assertThat(newPageURL, hasToString(ENGLISH_URL_PAGE));
     }
