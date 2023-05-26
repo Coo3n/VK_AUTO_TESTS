@@ -1,5 +1,6 @@
 import model.AuthorizationData;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -16,7 +17,6 @@ public class BaseTest {
         edgeOptions.addArguments("--remote-allow-origins=*");
         webDriver = new EdgeDriver(edgeOptions);
         webDriver.get(REGISTRATION_TARGET_URL);
-
 
         LoginOkPage loginOkPage = new LoginOkPage(webDriver);
         AuthorizationData auth = AuthorizationData.getInstance();
