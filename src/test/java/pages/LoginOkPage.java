@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,10 @@ public record LoginOkPage(WebDriver webDriver) {
     public void login(String email, String password) {
         WebElement elementFieldEmail = getFieldEmail();
         WebElement elementFieldPassword = getFieldPassword();
+        Assertions.assertAll(
+                () -> Assertions.assertTrue(elementFieldEmail.isDisplayed()),
+                () -> Assertions.assertTrue(elementFieldPassword.isDisplayed())
+        );
         elementFieldEmail.sendKeys(email);
         elementFieldPassword.sendKeys(password);
         elementFieldPassword.sendKeys(Keys.ENTER);
